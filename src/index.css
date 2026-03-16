@@ -1,1 +1,79 @@
 @import "tailwindcss";
+
+@theme {
+  --color-cream: #faf8f5;
+  --color-warm-50: #fefdfb;
+  --color-warm-100: #f5f0ea;
+  --color-warm-200: #e8e0d4;
+  --color-warm-300: #d4c8b8;
+  --color-warm-400: #a89a88;
+  --color-warm-500: #7a6e60;
+  --color-warm-600: #5c5347;
+  --color-warm-700: #403a32;
+  --color-warm-800: #2a2520;
+  --color-warm-900: #1a1714;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-warm-700);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typing cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.typing-cursor::after {
+  content: '|';
+  animation: blink 0.8s infinite;
+  color: var(--color-teal-500);
+  font-weight: 300;
+  margin-left: 2px;
+}
+
+/* Gradient animation for hero */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animated-gradient {
+  background: linear-gradient(
+    135deg,
+    #f0fdf9,
+    #e0f5f0,
+    #faf8f5,
+    #e8f4f0,
+    #f0faf8,
+    #faf8f5
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 12s ease infinite;
+}
+
+/* Floating particles */
+@keyframes float-up {
+  0% { transform: translateY(100%) scale(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+}
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-teal-400);
+  opacity: 0;
+  pointer-events: none;
+}

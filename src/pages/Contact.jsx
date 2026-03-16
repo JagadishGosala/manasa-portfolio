@@ -1,3 +1,4 @@
+import FadeIn from "../components/FadeIn";
 import { PROFILE } from "../data/portfolio";
 
 const contacts = [
@@ -9,41 +10,49 @@ const contacts = [
 
 export default function Contact() {
   return (
-    <div className="max-w-xl mx-auto pt-5">
-      <h2 className="text-3xl font-bold text-slate-50 mb-2">Get in Touch</h2>
-      <p className="text-slate-400 mb-9 text-[15px]">
-        I'm actively looking for hardware engineering opportunities. Let's connect!
-      </p>
+    <div className="max-w-xl mx-auto pt-4">
+      <FadeIn>
+        <h2 className="text-3xl font-bold text-warm-800 mb-1">Get in Touch</h2>
+        <p className="text-warm-400 mb-8 text-[15px]">
+          I'm actively looking for hardware engineering opportunities. Let's connect!
+        </p>
+      </FadeIn>
 
       <div className="flex flex-col gap-3">
         {contacts.map((c, i) => {
           const inner = (
             <div
-              className={`bg-sky-400/5 border border-sky-400/10 rounded-2xl px-6 py-5 flex items-center gap-4 transition-colors ${
-                c.href ? "hover:border-sky-400/35 cursor-pointer" : ""
+              className={`bg-white border border-warm-200/80 rounded-xl px-5 py-4 flex items-center gap-4 shadow-sm transition-all ${
+                c.href ? "hover:shadow-md hover:-translate-y-0.5 cursor-pointer" : ""
               }`}
             >
               <span className="text-2xl">{c.icon}</span>
               <div>
-                <div className="text-xs text-slate-500 font-medium">{c.label}</div>
-                <div className="text-[15px] text-slate-50 font-medium">{c.value}</div>
+                <div className="text-xs text-warm-400 font-medium">{c.label}</div>
+                <div className="text-[15px] text-warm-800 font-medium">{c.value}</div>
               </div>
             </div>
           );
 
-          return c.href ? (
-            <a key={i} href={c.href} target="_blank" rel="noopener noreferrer" className="no-underline">
-              {inner}
-            </a>
-          ) : (
-            <div key={i}>{inner}</div>
+          return (
+            <FadeIn key={i} delay={i * 0.1}>
+              {c.href ? (
+                <a href={c.href} target="_blank" rel="noopener noreferrer" className="no-underline">
+                  {inner}
+                </a>
+              ) : (
+                inner
+              )}
+            </FadeIn>
           );
         })}
       </div>
 
-      <div className="bg-sky-400/8 rounded-2xl p-7 mt-8 text-center border border-dashed border-sky-400/20">
-        <p className="text-slate-400 text-sm">🏆 {PROFILE.award}</p>
-      </div>
+      <FadeIn delay={0.4}>
+        <div className="bg-teal-50 border border-teal-100 rounded-xl p-6 mt-8 text-center">
+          <p className="text-teal-700 text-sm font-medium">🏆 {PROFILE.award}</p>
+        </div>
+      </FadeIn>
     </div>
   );
 }
