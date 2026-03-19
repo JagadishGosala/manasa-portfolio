@@ -4,7 +4,7 @@ import { PROFILE } from "../data/portfolio";
 const contacts = [
   { icon: "✉️", label: "Email", value: PROFILE.email, href: `mailto:${PROFILE.email}` },
   { icon: "📞", label: "Phone", value: PROFILE.phone, href: `tel:${PROFILE.phone.replace(/-/g, "")}` },
-  { icon: "🔗", label: "LinkedIn", value: "linkedin.com/in/saimanasa", href: PROFILE.linkedin },
+  { icon: "🔗", label: "LinkedIn", value: "https://www.linkedin.com/in/alamurisaimanasa/", href: PROFILE.linkedin },
   { icon: "📍", label: "Location", value: PROFILE.location, href: null },
 ];
 

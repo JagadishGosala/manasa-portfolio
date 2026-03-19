@@ -131,7 +131,7 @@ export default function Home() {
             transition={{ delay: 0.7, duration: 0.5 }}
             className="text-[15px] text-warm-500 max-w-2xl mx-auto leading-relaxed mb-8"
           >
-            Master's candidate at Sacramento State with hands-on ASIC verification
+            Graduate from California State University, Sacramento with hands-on ASIC verification
             experience at Western Digital. I design hardware that's fast, correct,
             and secure — from RTL to silicon-ready analog.
           </motion.p>
