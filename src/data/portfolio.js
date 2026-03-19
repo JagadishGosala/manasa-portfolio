@@ -5,7 +5,7 @@ export const PROFILE = {
   subtitle: "RTL Design · UVM Verification · Analog/Mixed-Signal IC Design",
   email: "saimanasaalamuri@csus.edu",
   phone: "669-317-8640",
-  linkedin: "https://linkedin.com/in/saimanasa",
+  linkedin: "https://www.linkedin.com/in/alamurisaimanasa/",
   location: "Sacramento, CA, USA",
   award: "Research Assistantship Program (RAP) Award — CSUS College of Engineering, Spring 2026",
 };
